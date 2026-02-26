@@ -29,7 +29,7 @@ public class BookController {
     return booService.addBook(dto);
   }
   @GetMapping("/get-owner/{ownerType}")
-  public List<BookResponseDto> getOwnerType(String ownerType){
+  public List<BookResponseDto> getOwnerType(@PathVariable String ownerType){
     return booService.getOwnerType(ownerType);
   }
 }
