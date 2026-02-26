@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<BookEntity,Long> {
   List<BookEntity> findByAuthor(String author);
+
+  List<BookEntity> findByOwnerType(String ownerType);
 }

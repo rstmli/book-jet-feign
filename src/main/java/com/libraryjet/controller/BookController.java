@@ -1,5 +1,6 @@
 package com.libraryjet.controller;
 
+import com.libraryjet.dto.BookRequestDto;
 import com.libraryjet.dto.BookResponseDto;
 import com.libraryjet.service.BooService;
 import lombok.RequiredArgsConstructor;
@@ -21,5 +22,14 @@ public class BookController {
   @GetMapping("/get/{author}")
   public List<BookResponseDto> getAuthor(@PathVariable String author){
     return booService.getByAuthor(author);
+  }
+
+  @PostMapping("/add")
+  public String addBOok(@RequestBody BookRequestDto dto){
+    return booService.addBook(dto);
+  }
+  @GetMapping("/get-owner/{ownerType}")
+  public List<BookResponseDto> getOwnerType(String ownerType){
+    return booService.getOwnerType(ownerType);
   }
 }
